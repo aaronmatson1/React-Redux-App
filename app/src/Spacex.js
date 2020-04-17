@@ -16,7 +16,15 @@ const SpaceX = props => {
           )}
           <table>
             <tbody>
-              {props.}//Pausing here to set up the actions file, and importing my data from the API
+              {props.rocketData.map(rocket => {
+                return (
+                  <tr>
+                    <td>{rocket.flicker_images[0]}</td>
+                    <td>{rocket.rocketName}</td>
+                    <td>{rocket.description}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -24,3 +32,16 @@ const SpaceX = props => {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    rocketData: state.rocketData,
+    isLoading: state.isLoading,
+    error: state.error
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchData }
+)(SpaceX);
