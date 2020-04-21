@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import { createStore } from  'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import SpaceX from './SpaceX';
 
-//import thunk from 'redux-thunk';
-import Spacex from './SpaceX';
-import {rootReducer} from './reducers';
+import { rootReducer } from './reducers';
 
 const store = createStore(rootReducer);
 
@@ -16,7 +16,7 @@ export default function App() {
     <Provider store={store}>
     <div className='App'>
       <h1>SpaceX Vehicles</h1>
-      //Insert SpaceX Component here
+      <SpaceX />
     </div>
     </Provider>
   )

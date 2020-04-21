@@ -4,7 +4,7 @@ export const FETCH_DATA = "FETCH_DATA";
 export const DATA_SUCCESS = "DATA_SUCCESS";
 export const DATA_ERROR = "DATA_ERROR";
 
-export const fetchData = () => dispatch /*this is your middleware */ => {
+export const fetchData = () => dispatch => {
   //dispatch FETCH_DATA
   dispatch({
     type: FETCH_DATA
